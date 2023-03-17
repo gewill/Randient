@@ -16,8 +16,8 @@ extension UIGradient {
     }
 }
 
-public enum UIGradient: CaseIterable {
-    <% @colors.each do |color| %>case <%=color["camelized_name"]%>
+public enum UIGradient: String, CaseIterable {
+    <% @colors.each do |color| %>case <%= color["camelized_name"] %>
     <% end -%>
 }
 
@@ -25,9 +25,9 @@ extension UIGradient {
 
     public var data: Data {
         switch self {
-            <% @colors.each do |color| %>case .<%=color["camelized_name"]%>:
-                return Data(name: "<%=color["name"]%>", 
-                            colors: [<% color["colors"].each do |hexString| %>ColorParser.parse("<%=hexString %>"), <% end %>])
+            <% @colors.each do |color| %>case .<%= color["camelized_name"] %>:
+                return Data(name: "<%= color["name"] %>", 
+                            colors: [<% color["colors"].each do |hexString| %>ColorParser.parse("<%= hexString %>"), <% end %>])
             <% end %>
         }
     }
