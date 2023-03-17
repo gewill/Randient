@@ -16,7 +16,7 @@ extension UIGradient {
     }
 }
 
-public enum UIGradient: String, CaseIterable {
+public enum UIGradient: Int, CaseIterable {
     case omolon
     case farhan
     case purple

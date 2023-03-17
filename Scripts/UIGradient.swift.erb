@@ -16,7 +16,7 @@ extension UIGradient {
     }
 }
 
-public enum UIGradient: String, CaseIterable {
+public enum UIGradient: Int, CaseIterable {
     <% @colors.each do |color| %>case <%= color["camelized_name"] %>
     <% end -%>
 }
