@@ -21,6 +21,6 @@ let package = Package(
         .target(
             name: "Randient",
             dependencies: [],
-            path: "Sources/Randient")
+            path: "Sources")
     ]
 )
